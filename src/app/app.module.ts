@@ -15,6 +15,7 @@ import { ItemService } from './services/item.service';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { AddItemComponent } from './components/add-item/add-item.component';
 
+import { ScrollToModule } from '@nicky-lenaers/ngx-scroll-to';
 
 
 @NgModule({
@@ -27,6 +28,7 @@ import { AddItemComponent } from './components/add-item/add-item.component';
   imports: [
     BrowserModule,
     FormsModule,
+    ScrollToModule.forRoot(),
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule
   ],
