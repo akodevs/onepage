@@ -14,8 +14,9 @@ import { ItemsComponent } from './components/items/items.component';
 import { ItemService } from './services/item.service';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { AddItemComponent } from './components/add-item/add-item.component';
-
+import { OwlModule } from 'ngx-owl-carousel';
 import { ScrollToModule } from '@nicky-lenaers/ngx-scroll-to';
+import { HttpClient, HttpClientModule } from '@angular/common/http'
 
 
 @NgModule({
@@ -28,9 +29,11 @@ import { ScrollToModule } from '@nicky-lenaers/ngx-scroll-to';
   imports: [
     BrowserModule,
     FormsModule,
+    HttpClientModule,
     ScrollToModule.forRoot(),
     AngularFireModule.initializeApp(environment.firebase),
-    AngularFirestoreModule
+    AngularFirestoreModule,
+    OwlModule
   ],
   providers: [ItemService],
   bootstrap: [AppComponent]

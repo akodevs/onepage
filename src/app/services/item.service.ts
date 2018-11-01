@@ -3,6 +3,7 @@ import { AngularFirestore, AngularFirestoreCollection, AngularFirestoreDocument 
 import { Observable } from 'rxjs/Observable';
 import { Item } from '../models/Item';
 import { map } from 'rxjs/operators';
+import {HttpClient} from '@angular/common/http'
 
 @Injectable()
 export class ItemService {
@@ -10,7 +11,7 @@ export class ItemService {
   items: Observable<Item[]>;
   itemDoc: AngularFirestoreDocument<Item>;
 
-  constructor(public afs: AngularFirestore) {
+  constructor(public afs: AngularFirestore, private http: HttpClient) {
     //this.items = this.afs.collection('items').valueChanges();
 
     this.itemsCollection = this.afs.collection('items', ref => ref.orderBy('title','asc'));

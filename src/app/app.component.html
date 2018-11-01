@@ -282,7 +282,7 @@
         </div>
       </section> <!-- end rev slider -->
 
-      <!-- Promo Video-->
+      <!-- Promo Video
       <section class="section-wrap pb-100" id="intro">
         <div class="container">
           <div class="row">
@@ -308,7 +308,7 @@
 
           </div>
         </div>
-      </section> <!-- Promo Video -->
+      </section>  Promo Video -->
 
 
       <!-- Promo Boxes -->
@@ -338,55 +338,129 @@
       </section> <!-- end Promo Boxes -->
 
 
-      <hr>
+
+        <!-- Showcases Slider -->
+        <section class="section-wrap">
+            <div class="container">
+              <div class="row heading-row">
+                <div class="col-md-8 col-md-offset-2 text-center">
+                  <h2 class="heading">Our Works</h2>
+                  <p class="subheading style-2">Gaze is a simple and elegant template with tons of features. Lorem ipsum dolor sit amet, consectetur. It is retina ready, easy to cuztomize and has amazing support. Get this perfect theme right now.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="container-fluid nopadding ">
+                <owl-carousel  [options]="options"
+                  [items]="slides"
+                  [carouselClasses]="['owl-theme', 'row', 'sliding']" >
+                  <div class="work-item" *ngFor="let img of slides; let i = index">
+                      <div class="work-container">
+                          <div class="work-img">
+                            <img [src]="img" alt=""/>
+                          </div>
+                      </div>
+                  </div>
+              </owl-carousel>
+              <!-- <div id="showcases-slider" class="flickity-slider-wrap dark-dots mfp-hover" data-autoplay="true" data-arrows="false" data-slidedots="true">
+                <div class="gallery-cell work-item">
+                  <div class="work-container">
+                    <div class="work-img">
+                      <img src="img/startup/slide_1.jpg" alt="">
+                    </div>
+                  </div>
+                </div>
+              </div>   -->
+
+
+            </div>
+          </section>
+
+
+          <hr>
 
       <!-- Process -->
-      <section class="section-wrap-lg icon-boxes pb-100" id="process">
-        <div class="container">
-          <div class="row">
-            <div class="col-sm-3 mb-50 animated-queue">
-              <div class="service-item-box style-5 arrow-next text-center">
-                <i class="icon-Eco-Bulb2"></i>
-                <div class="service-text">
-                  <h3>Our Expertise</h3>
-                  <p>Our expertise will give you latest design trends to get noticed.</p>
+      <section class="section-wrap-lg icon-boxes" id="process">
+          <div class="container">
+            <div class="row">
+              <div class="col-sm-3 mb-50 animated-queue">
+                <div class="service-item-box style-5 arrow-next text-center">
+                  <i class="icon-Eco-Bulb2"></i>
+                  <div class="service-text">
+                    <h3>Our Expertise</h3>
+                    <p>Our expertise will give you latest design trends to get noticed.</p>
+                  </div>
                 </div>
-              </div>
-            </div> <!-- end service item -->
+              </div> <!-- end service item -->
 
-            <div class="col-sm-3 mb-50 animated-queue">
-              <div class="service-item-box style-5 arrow-next text-center">
-                <i class="icon-Compose-Mail1"></i>
-                <div class="service-text">
-                  <h3> Your Website </h3>
-                  <p>Your website design will look clean and elegant with tons of features.</p>
+              <div class="col-sm-3 mb-50 animated-queue">
+                <div class="service-item-box style-5 arrow-next text-center">
+                  <i class="icon-Compose-Mail1"></i>
+                  <div class="service-text">
+                    <h3> Your Website </h3>
+                    <p>Your website design will look clean and elegant with tons of features.</p>
+                  </div>
                 </div>
-              </div>
-            </div> <!-- end service item -->
+              </div> <!-- end service item -->
 
-            <div class="col-sm-3 mb-50 animated-queue">
-              <div class="service-item-box style-5 arrow-next text-center">
-                <i class="icon-Gear-2"></i>
-                <div class="service-text">
-                  <h3>Quick Development</h3>
-                  <p>No more drag and drop. We can help you build your website quick!</p>
+              <div class="col-sm-3 mb-50 animated-queue">
+                <div class="service-item-box style-5 arrow-next text-center">
+                  <i class="icon-Gear-2"></i>
+                  <div class="service-text">
+                    <h3>Quick Development</h3>
+                    <p>No more drag and drop. We can help you build your website quick!</p>
+                  </div>
                 </div>
-              </div>
-            </div> <!-- end service item -->
+              </div> <!-- end service item -->
 
 
-            <div class="col-sm-3 mb-50 animated-queue">
-              <div class="service-item-box style-5  text-center">
-                <i class="icon-Increasing-Chart1"></i>
-                <div class="service-text">
-                  <h3>Boost Your Traffic</h3>
-                  <p>With the right package. We definitely can help you boost your traffic and sales!</p>
+              <div class="col-sm-3 mb-50 animated-queue">
+                <div class="service-item-box style-5  text-center">
+                  <i class="icon-Increasing-Chart1"></i>
+                  <div class="service-text">
+                    <h3>Boost Your Traffic</h3>
+                    <p>With the right package. We definitely can help you boost your traffic and sales!</p>
+                  </div>
                 </div>
-              </div>
-            </div> <!-- end service item -->
+              </div> <!-- end service item -->
+            </div>
           </div>
-        </div>
-      </section> <!-- end process -->
+        </section> <!-- end process -->
+
+
+      <!-- From Blog -->
+      <section class="section-wrap from-blog style-2 bg-light animated-bottom">
+          <div class="container">
+            <div class="row heading-row">
+              <div class="col-md-8 col-md-offset-2 text-center">
+                <p class="subheading">From Blog</p>
+                <h2 class="heading large">Our Latest News</h2>
+              </div>
+            </div>
+
+            <div class="row" >
+
+              <div id="owl-3-items" class="owl-carousel owl-theme owl-dark-dots">
+
+                <article class="blog-slide" *ngFor="let post of posts">
+                  <div class="entry-item">
+                    <div class="entry-wrap">
+                      <div class="entry">
+                        <h4 class="entry-title"><a href="blog-single.html">{{post.title}}</a></h4>
+                        <ul class="entry-meta">
+                          <li>{{post.date}}</li>
+                          <li class="entry-author"><a href="#">Admin</a></li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </article> <!-- end post -->
+
+              </div> <!-- end carousel -->
+
+            </div>
+          </div>
+        </section>
 
 
       <!-- Pricing Bg Section -->
@@ -510,7 +584,7 @@
         </div>
       </section> <!-- end partners -->
 
-      <!-- Newsletter -->
+      <!-- Newsletter
       <section class="newsletter" id="subscribe">
         <div class="container">
           <div class="row">
@@ -523,7 +597,7 @@
             </div>
           </div>
         </div>
-      </section>
+      </section>-->
 
       <!-- Footer Type-1 -->
       <footer class="footer footer-type-1 bg-dark">
