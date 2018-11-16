@@ -1,0 +1,303 @@
+<!-- <app-navbar></app-navbar>
+<div class="container">
+  <app-add-item></app-add-item>
+  <app-items></app-items>
+</div> -->
+
+
+<main class="main-wrapper oh">
+    <header class="nav-type-7 transparent dark">
+
+        <nav class="navbar navbar-static-top">
+          <div class="navigation" id="sticky-nav">
+            <div class="container-fluid semi-fluid relative">
+
+              <div class="row flex-parent">
+
+                <div class="navbar-header flex-child">
+                  <!-- Logo -->
+                  <div class="logo-container">
+                    <div class="logo-wrap">
+                      <a href="index-ny.html">
+                        <img class="logo-dark" src="assets/img/logo_dark.png" alt="logo">
+                      </a>
+                    </div>
+                  </div>
+                  <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                  </button>
+                </div> <!-- end navbar-header -->
+
+                <div class="nav-wrap flex-child">
+                  <div class="collapse navbar-collapse text-center" id="navbar-collapse">
+
+                    <ul class="nav navbar-nav">
+
+                      <li class="dropdown">
+                        <a href="/">Home</a>
+                      </li> <!-- end features -->
+
+                      <li class="dropdown">
+                        <a href="#">About Us</a>
+                      </li>
+
+<!--
+                      <li class="dropdown">
+                        <a href="#">Connect</a>
+                        <i class="fa fa-angle-down dropdown-trigger"></i>
+                        <ul class="dropdown-menu">
+                          <li><a href="blog-standard.html">Blogs</a></li>
+                          <li><a href="blog-masonry.html">Tutorials</a></li>
+                          <li><a href="blog-single.html">News and Announcements</a></li>
+                          <li><a href="blog-no-sidebar.html">Promo</a></li>
+                        </ul>
+                      </li> -->
+
+
+                      <li class="dropdown">
+                        <a href="/contact-us">Contact Us</a>
+                        <i class="fa fa-angle-down dropdown-trigger"></i>
+                        <ul class="dropdown-menu">
+                          <li><a href="blog-standard.html">Facebook</a></li>
+                          <li><a href="blog-masonry.html">Instagram</a></li>
+                          <li><a href="blog-masonry.html">Twitter</a></li>
+                          <li><a href="blog-single.html">Email</a></li>
+                        </ul>
+                      </li> <!-- end elements -->
+
+                      <li class="mobile-socials hidden-lg hidden-md">
+                        <div class="nav-social-icons">
+                          <div class="social-icons nobase dark">
+                            <a href="#"><i class="fa fa-twitter"></i></a>
+                            <a href="#"><i class="fa fa-facebook"></i></a>
+                            <a href="#"><i class="fa fa-instagram"></i></a>
+                          </div>
+                        </div>
+                      </li>
+
+                      <li class="dropdown">
+                        <a href="#">Sign in</a>
+                      </li>
+
+                    </ul> <!-- end menu -->
+                  </div> <!-- end collapse -->
+                </div> <!-- end col -->
+
+                <div class="flex-child flex-right hidden-sm hidden-xs">
+                  <div class="nav-social-icons right">
+                    <div class="social-icons dark nobase">
+                      <a href="#"><i class="fa fa-twitter"></i></a>
+                      <a href="#"><i class="fa fa-facebook"></i></a>
+                      <a href="#"><i class="fa fa-instagram"></i></a>
+                    </div>
+                  </div>
+                </div>
+
+              </div> <!-- end row -->
+            </div> <!-- end container -->
+          </div> <!-- end navigation -->
+        </nav> <!-- end navbar -->
+
+      </header>
+
+    <div class="content-wrapper oh" *ngIf="post$ | async as post">
+
+      <!-- Page Title -->
+      <section class="page-title text-center" [ngStyle]="{ 'background-image': 'url(' + post.featured_image + ')'}"  >
+        <div class="container relative clearfix">
+          <div class="title-holder">
+            <div class="title-text">
+              <h1>{{ post.title }}</h1>
+              <ul class="entry-meta">
+                <li class="entry-date">
+                  <i class="fa fa-calendar-o"></i>
+                  {{ post.date | date }}
+                </li>
+                <li class="entry-author">
+                  <i class="fa fa-user"></i>
+                  <a href="#">{{ post.author.name }}</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section> <!-- end page title -->
+
+
+      <!-- Blog Single -->
+      <section class="section-wrap-sm post-single bg-light pb-50">
+        <div class="container relative">
+          <div class="row">
+
+            <!-- content -->
+            <div class="col-md-9 post-content mb-50">
+
+              <article class="entry-item">
+                <div class="entry-wrap">
+                  <div class="entry">
+                    <div class="entry-content">
+                      <div class="article" [innerHTML]="post.content">   </div> <!-- end article -->
+                      <div class="entry-share text-center">
+                        <div class="socials-share clearfix">
+                          <div class="social-icons rounded">
+                            <a href="#" class="social-twitter"><i class="fa fa-twitter"></i></a>
+                            <a href="#" class="social-facebook"><i class="fa fa-facebook"></i></a>
+                            <a href="#" class="social-instagram"><i class="fa fa-instagram"></i></a>
+                            <a href="#" class="social-email"><i class="fa fa-envelope"></i></a>
+                          </div>
+                        </div>
+                      </div>
+
+                      <!-- entry author -->
+                      <div class="entry-author-box clearfix">
+                        <img [src]="post.author.avatar_URL" class="author-img" alt="img">
+                        <div class="author-info">
+                          <h6 class="author-name">{{ post.author.name }}</h6>
+                          <a href="meshupstudio.com">Visit Website</a>
+                          <p>Meshup Studio </p>
+                        </div>
+                      </div>
+
+
+
+                    </div> <!-- end entry content -->
+
+                  </div>
+                </div>
+              </article>
+
+            </div> <!-- end col -->
+
+            <!-- Sidebar -->
+            <aside class="col-md-3 sidebar">
+
+              <div class="widget search">
+                <form class="relative">
+                  <input type="search" class="searchbox mb-0" placeholder="Search">
+                  <button type="submit" class="search-button"><i class="ui-search"></i></button>
+                </form>
+              </div>
+
+              <!-- Categories -->
+              <div class="widget categories">
+                <h3 class="widget-title heading uppercase relative bottom-line full-grey">Categories</h3>
+                <ul class="list-dividers" >
+                  <li *ngFor="let item of post.categories | keyvalue">
+                    <a href="#">{{item.key}}</a>
+                  </li>
+                </ul>
+              </div>
+
+              <!-- Recent posts
+              <div class="widget recent-posts">
+                <h3 class="w-->
+
+
+
+              <!-- Tags -->
+              <div class="widget tags light clearfix" >
+                <h3 class="widget-title heading uppercase relative bottom-line full-grey">Tags</h3>
+
+                <a *ngFor="let item of post.tags | keyvalue" href="#">
+                    {{item.key}}
+                </a>
+
+              </div>
+
+            </aside> <!-- end sidebar -->
+
+          </div> <!-- end row -->
+        </div> <!-- end container -->
+      </section> <!-- end blog standard -->
+
+
+
+      <footer class="footer footer-type-1 bg-dark">
+          <div class="container">
+            <div class="footer-widgets">
+              <div class="row">
+
+                <div class="col-md-4 col-sm-6 col-xs-12">
+                  <div class="widget footer-about-us">
+                    <img src="assets/img/logo_dark.png" alt="" class="logo">
+                    <p class="mb-20 mt-20"> Be on top of searches. Meshup studio will help you to gain more clients through your website. Our work has been crafted by our world-class design team. It is retina ready, easy to cuztomize and has amazing support  </p>
+                    <div class="footer-socials">
+                      <div class="social-icons nobase">
+                        <a href="#"><i class="fa fa-twitter"></i></a>
+                        <a href="#"><i class="fa fa-facebook"></i></a>
+                        <a href="#"><i class="fa fa-instagram"></i></a>
+                      </div>
+                    </div>
+                  </div>
+                </div> <!-- end about us -->
+
+
+                <div class="col-md-2 col-md-offset-2 col-sm-6 col-xs-12">
+                  <div class="widget footer-links list-no-dividers">
+                    <h5 class="widget-title">Product</h5>
+                    <ul>
+                      <li><a href="#">About</a></li>
+                      <li><a href="#">Resources</a></li>
+                      <li><a href="#">Blog</a></li>
+                    </ul>
+                  </div>
+                </div>
+
+                <div class="col-md-2 col-sm-6 col-xs-12">
+                  <div class="widget footer-links list-no-dividers">
+                    <h5 class="widget-title">Support</h5>
+                    <ul>
+                      <li><a href="#">Support Policy</a></li>
+                      <li><a href="#">F.A.Q</a></li>
+                      <li><a href="#">Contact Us</a></li>
+                    </ul>
+                  </div>
+                </div>
+
+                <div class="col-md-2 col-sm-6 col-xs-12">
+                  <div class="widget footer-links list-no-dividers">
+                    <h5 class="widget-title">Pricing</h5>
+                    <ul>
+                      <li><a href="#">Pricing</a></li>
+                      <li><a href="#">Features</a></li>
+                      <li><a href="#">Affiliates</a></li>
+                    </ul>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div> <!-- end container -->
+
+          <div class="bottom-footer">
+            <div class="container">
+              <div class="row">
+
+                <div class="col-sm-6">
+                  <ul class="bottom-footer-links sm-text-center">
+                    <li><a href="#">Terms &amp; Conditions</a></li>
+                    <li><a href="#">License</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Updates</a></li>
+                  </ul>
+                </div>
+
+                <div class="col-sm-6 copyright text-right sm-text-center">
+                  <span>
+                    &copy; 2018 Meshup Studio
+                  </span>
+                </div>
+
+              </div>
+            </div>
+          </div> <!-- end bottom footer -->
+        </footer> <!-- end footer -->
+      <div id="back-to-top">
+        <a href="#top"><i class="fa fa-angle-up"></i></a>
+      </div>
+
+    </div> <!-- end content wrapper -->
+  </main> <!-- end main wrapper -->

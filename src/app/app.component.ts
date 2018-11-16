@@ -4,35 +4,10 @@ import { Observable } from 'rxjs/Observable';
 
 @Component({
   selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  template: `<router-outlet></router-outlet>`
 })
-export class AppComponent implements OnInit {
+export class AppComponent  {
 
-  title = 'mu';
-  slides = [ 'http://placehold.it/1000x750/000000', 'http://placehold.it/1000x750/333333', 'http://placehold.it/1000x750/666666',
-  'http://placehold.it/1000x750/000000', 'http://placehold.it/1000x750/333333', 'http://placehold.it/1000x750/666666',
-  ];
-  options = {
-    dots: true,
-    navigation: false,
-    center: true,
-    items: 2,
-    loop: true,
-  };
-  wp_blogs$: Observable<any[]>;
-  posts: any;
-
-  constructor(private service: WordpressService) {
-
-  }
-
-  ngOnInit() {
-    this.service.getPosts().subscribe(data => {
-      console.log(data['posts'])
-       this.posts = data['posts'];
-    });
-  }
 
 }
 
